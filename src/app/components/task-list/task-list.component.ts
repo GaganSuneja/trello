@@ -48,10 +48,10 @@ export class TaskListComponent implements OnInit {
     this.showInput = !this.showInput;
   }
   
-  editTask(index) {
-    this.tasks[index].showTask = !this.tasks[index].showTask;
+  // // editTask(index) {
+  // //   this.tasks[index].showTask = !this.tasks[index].showTask;
     
-  }
+  // }
   drag(ev) {
     ev.dataTransfer.effectAllowed = 'move'
     ev.dataTransfer.setData("text", ev.target.id);
