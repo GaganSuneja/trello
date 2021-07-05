@@ -1,0 +1,19 @@
+<div  (drop)="drop($event)"  (dragover)="dragOver($event)" style="padding:20px;border:1px solid black;border-radius: 5px;margin-right:20px">
+    <input type="text" *ngIf="showListInput" placeholder="Enter List Name"(keyup.enter)="taskListName()" [(ngModel)]="listName"/>
+    <p *ngIf="!showListInput" >{{displayListName}}</p>
+    <button  *ngIf="!showListInput" (click)="editListName()">edit list name</button>
+    <ng-container [id]="i+1" *ngFor="let task of tasks;let i=index">
+    <!-- <div [draggable]="true" (dragstart)="drag($event)"  style="padding:10px;border:1px solid black; border-radius:5px">
+    <input *ngIf="task.showtask" type="text" placeholder="new task" [(ngModel)]="task.name" (keyup.enter)="createTask()" />
+    <span *ngIf="!task.showtask">{{task.name}}</span>
+    <button  *ngIf="!task.showtask" (click)="editTask(i)">edit</button>
+    </div> -->
+        <app-task [index]="i+1">
+
+        </app-task>
+    </ng-container>
+    <div style="margin-top:20px">
+    <label for="newTask"></label>
+    <button style="border:1px solid black;border-radius: 5px;" (click)="addNewTask()">+New Task</button>
+    </div>
+</div>

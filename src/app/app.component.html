@@ -1,0 +1,32 @@
+<!-- 
+
+<div *ngFor="let result of results">
+  {{result}}
+</div>
+
+<div style="display:flex;align-items: center;flex-direction: column;">
+  <div>
+    <label for="searchInput" class="form-label">search input</label>
+    <input id="searchInput" style="border: 1px solid #08429847;
+    border-radius: 5px;
+    display: block;" [(ngModel)]="searchText" (keyup.enter)="addTask()" type="text"/>
+  </div>
+
+  <div *ngFor="let task of tasks" >
+    <div>
+      <input class="form-check-input" [(ngModel)]="task.status"  type="checkbox"/>
+      <label class="form-check-label" >{{task.task}}</label>
+      <spanp></span>
+    </div>
+  </div>
+</div> -->
+
+<div style="display:flex;margin-top:20px">
+<ng-container *ngFor="let task of taskList">
+  <app-task-list >
+
+  </app-task-list>
+</ng-container>
+<button style="margin-left:10px;width:100px;height:30px;border:1px solid black; border-radius:5px" (click)="createNewTaskList()"> New List</button>
+
+</div>

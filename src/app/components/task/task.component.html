@@ -1,0 +1,6 @@
+<div [draggable]="true" 
+(dragstart)="drag($event)"  style="padding:10px;border:1px solid black; border-radius:5px;margin-bottom:20px">
+    <input *ngIf="showInput" type="text" placeholder="new task" [(ngModel)]="taskName" (keyup.enter)="createTask()" />
+    <span *ngIf="!showInput">{{taskName}}</span>
+    <button  *ngIf="!showInput" (click)="editTask()">edit</button>
+</div>
